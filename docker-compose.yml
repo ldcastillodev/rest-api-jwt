@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    
+
+
+  rest-api:
+    container_name: tyba-rest-api
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    restart: always
+    links:
+      - mongo_db
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://db_container:27017
+    depends_on:
+      - mongo_db
+
+
