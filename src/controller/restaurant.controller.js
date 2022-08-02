@@ -10,6 +10,9 @@ const response = await axios(`https://api.geoapify.com/v2/places?categories=cate
 
 const restaurants = response.data.features.map(e => e.properties.name);
 
+//checking if restaurants were found, if not returns response with a message
+if (restaurants.length === 0) return res.status(404).json({message: 'restaurants not found within given coordinates'})
+
 // creating a record of restaurants
 await createRecord(restaurants, latitude, longitude);
 
