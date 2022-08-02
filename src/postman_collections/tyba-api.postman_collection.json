@@ -80,7 +80,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"latitude\": \"-67.9998\",\r\n    \"longitude\": \"10.1741\"\r\n}"
+					"raw": "{\r\n    \"latitude\": \"40.71427\",\r\n    \"longitude\": \"-74.00597\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/restaurants",
