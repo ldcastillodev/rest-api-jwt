@@ -6,7 +6,7 @@ export const getRestaurants = async (req, res) => {
 const { latitude, longitude } = req.body;
 
 // making a request to the geoapi to get near restaurants within coordinates
-const response = await axios(`https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=circle:${latitude},${longitude},5000&limit=5&apiKey=10deb557e71c447f831d388f4ab77768`);
+const response = await axios(`https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=circle:${longitude},${latitude},10000&limit=5&apiKey=10deb557e71c447f831d388f4ab77768`);
 
 const restaurants = response.data.features.map(e => e.properties.name);
 
