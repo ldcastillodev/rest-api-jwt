@@ -1,4 +1,4 @@
-# Tyba-Api
+# rest-api-jwt
 
 ## To initialize app:
 
